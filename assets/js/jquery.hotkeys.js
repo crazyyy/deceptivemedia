@@ -115,7 +115,8 @@
     // excludes: button, checkbox, file, hidden, image, password, radio, reset, search, submit, url
     textAcceptingInputTypes: [
       "text", "password", "number", "email", "url", "range", "date", "month", "week", "time", "datetime",
-      "datetime-local", "search", "color", "tel"],
+      "datetime-local", "search", "color", "tel"
+    ],
 
     // default input types not to bind to unless bound directly
     textInputTypes: /textarea|input|select/i,
@@ -176,8 +177,7 @@
 
       if (special) {
         possible[modif + special] = true;
-      }
-      else {
+      } else {
         possible[modif + character] = true;
         possible[modif + jQuery.hotkeys.shiftNums[character]] = true;
 

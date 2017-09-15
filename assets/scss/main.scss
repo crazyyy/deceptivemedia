@@ -1,123 +1,25 @@
-@import "import/reset";
-@import "import/variables";
-@import "import/buttons";
-@import "import/forms";
-@import "import/lists";
-@import "import/tables";
-@import "import/mixin";
-@import "import/wordpress";
+@import 'original/nprogress';
+@import 'original/magnific-popup';
+@import 'original/reset';
+@import 'original/style';
+@import 'original/mediaelementplayer';
+@import 'original/wp-mediaelement';
+@import 'original/light';
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
-
-@import "grid/bootstrap";
-@import "grid/bootstrap-theme";
-
-@import "gulp_png_sprite";
-
-
-body {
-  font-family: $base-font-family;
-  font-size: $base-font-size;
-  font-weight: $fnorm;
-  line-height: $base-line-height;
-  min-width: 320px;
-  transition: $base-transition;
-  color: $base-font-color;
-  background-color: $base-background-color;
-  -webkit-font-smoothing: antialiased;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: $heading-font-family;
-  font-size: $base-font-size;
-  line-height: $heading-line-height;
-  margin: 0 0 $small-spacing;
-}
-p,
-pre {
-  margin: 0 0 $small-spacing;
-}
-a {
-  transition: $base-transition;
-  text-decoration: none;
-  color: $action-color;
-  &:active,
-  &:focus,
-  &:hover {
-    color: darken($action-color, 15%);
-  }
-  &:active,
-  &:focus {
-    color: lighten($action-color, 15%);
-    outline: none;
-  }
-}
-hr {
-  margin: $base-spacing 0;
-  border-top: none;
-  border-right: none;
-  border-bottom: $base-border;
-  border-left: none;
-}
-img,
-picture {
-  max-width: 100%;
-  margin: 0;
-}
-.wrapper {
-  position: relative;
-  width: 100%;
-  height: auto !important;
-  height: 100%;
-  min-height: 100%;
-  margin: 0 auto;
-
-  @extend .clearfix;
-}
-.container {
-  position: relative;
-  max-width: $width;
+body,
+#respond textarea,
+#respond input {
+  font-family: 'Lato', sans-serif;
 }
 
-header {
-  background-color: $gray-light;
-  .header--logo {
-    display: block;
-    img {
-      max-width: 100%;
-    }
-  }
-}
-nav {
-  ul {
-    @extend .clearfix;
-    li {
-      display: inline-block;
-    }
+@media screen and (max-width:500px) {
+  header .site-title,
+  header .site-description {
+    display: none;
   }
 }
 
-section {
-  padding: 0 0 $footer;
+header .logo {
+  display: inline-block;
 }
-article {
-  @extend .clearfix;
-}
-.looper {
-  @extend .clearfix;
-}
-
-
-footer {
-  height: $footer;
-  margin: $footer_margin auto 0;
-  background-color: $gray-light;
-}
-
-
-@import "fonts/font_roboto";
-@import "import/base64";
-@import "import/print";

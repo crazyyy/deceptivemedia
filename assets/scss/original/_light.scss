@@ -1,0 +1,125 @@
+html,
+body,
+header,
+.title-nav-bar,
+.info,
+.nav-container,
+.cat-description,
+.mfp-container {
+  background-color: #ffffff;
+}
+
+input {
+  &[type=text],
+  &[type=password] {
+    background-color: #ffffff;
+  }
+}
+
+textarea {
+  background-color: #ffffff;
+}
+
+img.responsive-full,
+.gallery img {
+  border-color: #ffffff;
+}
+
+.camera-icon,
+.current-menu-item > a,
+.current-cat > a,
+.current_page_item > a,
+input[type=submit],
+.arch-wrap:hover .thumb-title,
+.bypostauthor a.comment-author-link strong,
+blockquote,
+.page-numbers.current,
+.page-links b {
+  color: #ffffff;
+}
+
+body {
+  color: #707070;
+}
+
+input {
+  &[type=text],
+  &[type=password] {
+    color: #707070;
+  }
+}
+
+textarea,
+.mfp-close,
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder,
+:-moz-placeholder {
+  color: #707070;
+}
+
+blockquote p,
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder,
+:-moz-placeholder {
+  border-color: #707070;
+}
+
+a,
+.link-color,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #0a0a0a;
+}
+
+.svg-logo svg {
+  rect,
+  path {
+    fill: #0a0a0a !important;
+  }
+}
+
+.camera-icon,
+.current-menu-item > a,
+.current-cat > a,
+.current_page_item > a,
+input[type=submit],
+.arch-wrap:hover .thumb-title,
+#nprogress .bar,
+.bypostauthor a.comment-author-link strong,
+blockquote,
+.page-numbers.current,
+.page-links b {
+  background-color: #0a0a0a;
+}
+
+.camera-stat {
+  border-color: #0a0a0a;
+}
+
+header,
+.title-nav-bar,
+.fa-border {
+  border-color: #f2f2f2;
+}
+
+input {
+  &[type=text],
+  &[type=password] {
+    border-color: #f2f2f2;
+  }
+}
+
+textarea {
+  border-color: #f2f2f2;
+}
+
+.divide,
+hr {
+  background-color: #f2f2f2;
+}

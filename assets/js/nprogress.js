@@ -1,7 +1,8 @@
 /* NProgress, (c) 2013, 2014 Rico Sta. Cruz - http://ricostacruz.com/nprogress
  * @license MIT */
 
-;(function(root, factory) {
+;
+(function(root, factory) {
 
   if (typeof define === 'function' && define.amd) {
     define(factory);
@@ -67,9 +68,9 @@
     NProgress.status = (n === 1 ? null : n);
 
     var progress = NProgress.render(!started),
-        bar      = progress.querySelector(Settings.barSelector),
-        speed    = Settings.speed,
-        ease     = Settings.easing;
+      bar = progress.querySelector(Settings.barSelector),
+      speed = Settings.speed,
+      ease = Settings.easing;
 
     progress.offsetWidth; /* Repaint */
 
@@ -160,15 +161,21 @@
 
     if (!n) {
       return NProgress.start();
-    } else if(n > 1) {
+    } else if (n > 1) {
       return;
     } else {
       if (typeof amount !== 'number') {
-        if (n >= 0 && n < 0.2) { amount = 0.1; }
-        else if (n >= 0.2 && n < 0.5) { amount = 0.04; }
-        else if (n >= 0.5 && n < 0.8) { amount = 0.02; }
-        else if (n >= 0.8 && n < 0.99) { amount = 0.005; }
-        else { amount = 0; }
+        if (n >= 0 && n < 0.2) {
+          amount = 0.1;
+        } else if (n >= 0.2 && n < 0.5) {
+          amount = 0.04;
+        } else if (n >= 0.5 && n < 0.8) {
+          amount = 0.02;
+        } else if (n >= 0.8 && n < 0.99) {
+          amount = 0.005;
+        } else {
+          amount = 0;
+        }
       }
 
       n = clamp(n + amount, 0, 0.994);
@@ -187,7 +194,8 @@
    * @param $promise jQUery Promise
    */
   (function() {
-    var initial = 0, current = 0;
+    var initial = 0,
+      current = 0;
 
     NProgress.promise = function($promise) {
       if (!$promise || $promise.state() === "resolved") {
@@ -204,10 +212,10 @@
       $promise.always(function() {
         current--;
         if (current === 0) {
-            initial = 0;
-            NProgress.done();
+          initial = 0;
+          NProgress.done();
         } else {
-            NProgress.set((initial - current) / initial);
+          NProgress.set((initial - current) / initial);
         }
       });
 
@@ -230,10 +238,10 @@
     progress.id = 'nprogress';
     progress.innerHTML = Settings.template;
 
-    var bar      = progress.querySelector(Settings.barSelector),
-        perc     = fromStart ? '-100' : toBarPerc(NProgress.status || 0),
-        parent   = document.querySelector(Settings.parent),
-        spinner;
+    var bar = progress.querySelector(Settings.barSelector),
+      perc = fromStart ? '-100' : toBarPerc(NProgress.status || 0),
+      parent = document.querySelector(Settings.parent),
+      spinner;
 
     css(bar, {
       transition: 'all 0 linear',
@@ -282,9 +290,9 @@
 
     // Sniff prefixes
     var vendorPrefix = ('WebkitTransform' in bodyStyle) ? 'Webkit' :
-                       ('MozTransform' in bodyStyle) ? 'Moz' :
-                       ('msTransform' in bodyStyle) ? 'ms' :
-                       ('OTransform' in bodyStyle) ? 'O' : '';
+      ('MozTransform' in bodyStyle) ? 'Moz' :
+      ('msTransform' in bodyStyle) ? 'ms' :
+      ('OTransform' in bodyStyle) ? 'O' : '';
 
     if (vendorPrefix + 'Perspective' in bodyStyle) {
       // Modern browsers with 3D support, e.g. Webkit, IE10
@@ -327,14 +335,20 @@
     var barCSS;
 
     if (Settings.positionUsing === 'translate3d') {
-      barCSS = { transform: 'translate3d('+toBarPerc(n)+'%,0,0)' };
+      barCSS = {
+        transform: 'translate3d(' + toBarPerc(n) + '%,0,0)'
+      };
     } else if (Settings.positionUsing === 'translate') {
-      barCSS = { transform: 'translate('+toBarPerc(n)+'%,0)' };
+      barCSS = {
+        transform: 'translate(' + toBarPerc(n) + '%,0)'
+      };
     } else {
-      barCSS = { 'margin-left': toBarPerc(n)+'%' };
+      barCSS = {
+        'margin-left': toBarPerc(n) + '%'
+      };
     }
 
-    barCSS.transition = 'all '+speed+'ms '+ease;
+    barCSS.transition = 'all ' + speed + 'ms ' + ease;
 
     return barCSS;
   }
@@ -368,8 +382,8 @@
    */
 
   var css = (function() {
-    var cssPrefixes = [ 'Webkit', 'O', 'Moz', 'ms' ],
-        cssProps    = {};
+    var cssPrefixes = ['Webkit', 'O', 'Moz', 'ms'],
+      cssProps = {};
 
     function camelCase(string) {
       return string.replace(/^-ms-/, 'ms-').replace(/-([\da-z])/gi, function(match, letter) {
@@ -382,8 +396,8 @@
       if (name in style) return name;
 
       var i = cssPrefixes.length,
-          capName = name.charAt(0).toUpperCase() + name.slice(1),
-          vendorName;
+        capName = name.charAt(0).toUpperCase() + name.slice(1),
+        vendorName;
       while (i--) {
         vendorName = cssPrefixes[i] + capName;
         if (vendorName in style) return vendorName;
@@ -404,8 +418,8 @@
 
     return function(element, properties) {
       var args = arguments,
-          prop,
-          value;
+        prop,
+        value;
 
       if (args.length == 2) {
         for (prop in properties) {
@@ -433,7 +447,7 @@
 
   function addClass(element, name) {
     var oldList = classList(element),
-        newList = oldList + name;
+      newList = oldList + name;
 
     if (hasClass(oldList, name)) return;
 
@@ -447,7 +461,7 @@
 
   function removeClass(element, name) {
     var oldList = classList(element),
-        newList;
+      newList;
 
     if (!hasClass(element, name)) return;
 
