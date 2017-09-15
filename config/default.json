@@ -1,6 +1,6 @@
 {
-  "domain": "wp-framework.dev",
-  "theme": "wp-framework",
+  "domain": "decept.dev",
+  "theme": "wp-decept",
   "path": {
     "base": {
       "src":"assets/",
