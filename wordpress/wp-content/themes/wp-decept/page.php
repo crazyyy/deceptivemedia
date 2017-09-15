@@ -48,9 +48,7 @@
               <a href="<?php echo home_url(); ?>"><i class="fa fa-home fa-border" aria-hidden="true"></i></a>
               <a href="javascript:void(0)" class="info-toggle"><?php if (function_exists('easy_breadcrumbs')) easy_breadcrumbs(); ?></a>
             </span>
-
             <div class="prev-next alignright">
-
             </div>
             <div class="clear"></div>
           </div>

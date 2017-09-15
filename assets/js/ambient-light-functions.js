@@ -2,14 +2,13 @@
  * Ambient Light global functions.
  * TODO: Move all functions from ambient-light.js here that need to be accessed globally.
  */
-
 (function($) {
   "use strict";
 
   // Find pop-up images.
   $.fn.find_popup_images = function() {
 
-    // magnificPopup single image.
+   // magnificPopup single image.
     $('a[href*=".jpg"], a[href*=".jpeg"], a[href*=".png"], a[href*=".gif"]').not('.social-share a, #slider a').each(function() {
       if ($(this).parents('.gallery').length === 0) {
         $(this).magnificPopup({
@@ -53,17 +52,18 @@
           }
         }
       });
-      image_path = $('.photo-info-zoom .photo-info').attr('src');
+
+      window.image_path = $('.photo-info-zoom .photo-info').attr('src');
+
       $('.photo-info-zoom').magnificPopup({
         closeOnContentClick: true,
         showCloseBtn: false,
         fixedContentPos: true,
-        items: {
-          src: image_path
-        },
+
         type: 'image',
         callbacks: {
           open: function() {
+            console.log('3', window.image_path)
             $().gallery_keys();
             $('.mfp-container').css('padding', '0');
             $('img.mfp-img').css('padding', '0.5rem');
@@ -73,6 +73,7 @@
           }
         }
       });
+
     }
 
     // magnificPopup gallery.
@@ -154,3 +155,5 @@
   };
 
 })(jQuery);
+
+

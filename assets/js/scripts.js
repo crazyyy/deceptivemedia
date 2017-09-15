@@ -21,3 +21,10 @@ if (typeof jQuery === 'undefined') {
   console.log('jQuery has loaded');
 }
 // Place any jQuery/helper plugins in here.
+
+$(function() {
+  $('.photo-info-zoom').each(function(index, el) {
+    var imagesrc = $(this).children('img').attr('big-src');
+    $(this).attr('href', imagesrc)
+  });
+});

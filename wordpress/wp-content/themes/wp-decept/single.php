@@ -34,11 +34,23 @@
         </div>
         <div class="info ">
           <div class="average-color-line" style="background: url('<?php echo get_template_directory_uri(); ?>/img/20130223_164032-15-1x1.jpg')"></div>
-          <a class="photo-info-zoom" href="javascript:void(0)">
-            <?php if ( has_post_thumbnail()) { ?>
-              <img class="photo-infol wp-post-image" src="<?php echo the_post_thumbnail_url('medium'); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />
+
+            <a class="photo-info-zoom" href="javascript:void(0)">
+              <?php if ( has_post_thumbnail()) { ?>
+                <img class="photo-info wp-post-image" width="250" big-src="<?php echo the_post_thumbnail_url(); ?>" src="<?php echo the_post_thumbnail_url(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />
+              <?php } else { ?>
+                <img class="photo-info wp-post-image" big-src="<?php echo catchFirstImage(); ?>" src="<?php echo catchFirstImage(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />
+              <?php } ?>
+            </a>
+
+            <?php $images = get_field('gallery'); if( $images ) { ?>
+              <?php foreach( $images as $image ): ?>
+                <a class="photo-info-zoom" href="javascript:void(0)">
+                  <img class="photo-info wp-post-image" big-src="<?php echo $image['sizes']['large']; ?>" src="<?php echo $image['sizes']['small']; ?>" alt="<?php echo $image['alt']; ?>" />
+                </a>
+              <?php endforeach; ?>
             <?php } ?>
-          </a>
+
           <h1><?php the_title(); ?></h1>
           <div class="post-stats">
             <div class="post-stats-type">

@@ -5,21 +5,19 @@
       <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
         <div id="photo">
-          <?php  $images = get_field('gallery'); if( $images ) { ?>
-            <div id="slider">
-              <?php foreach( $images as $image ): ?>
-                <a href="#">
-                  <img class="responsive-full wp-post-image" src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" />
-                </a>
-              <?php endforeach; ?>
-            </div>
-          <?php } else { ?>
-            <?php if ( has_post_thumbnail()) { ?>
-              <img class="responsive-full wp-post-image" src="<?php echo the_post_thumbnail_url(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />
-            <?php } else { ?>
-              <img class="responsive-full wp-post-image" src="<?php echo catchFirstImage(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />
-            <?php } ?>
-          <?php } ?>
+          <div id="slider">
+
+            <?php $tempPost = $posts; $posts = get_field('sliders'); if( $posts ): ?>
+              <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+                <?php setup_postdata($post); ?>
+                  <a href="<?php the_permalink(); ?>">
+                    <img class="responsive-full wp-post-image" src="<?php echo the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>" />
+                  </a>
+                <?php endforeach; ?>
+              <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+            <?php endif; $posts = $tempPost; ?>
+
+          </div>
         </div>
 
         <div class="info">
