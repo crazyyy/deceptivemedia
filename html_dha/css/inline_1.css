@@ -1,0 +1,5 @@
+
+	@import url("https://fonts.googleapis.com/css?family=Lato");
+	body, #respond textarea,#respond input {font-family:"Lato", sans-serif;}
+	@media screen and (max-width:500px){header .site-title, header .site-description{display: none;}}
+	header .logo {display: inline-block;}
