@@ -1,16 +1,6 @@
 
   <?php wp_footer(); ?>
 
-  <script src="<?php echo get_template_directory_uri(); ?>/js/mint.js" type="text/javascript"></script>
-  <script class="post-id" type="text/javascript">
-    13258
-  </script>
-  <script class="number_of_pages" type="text/javascript">
-    0
-  </script>
-  <script class="query" type="text/javascript">
-    query = []
-  </script>
   <script>
   document.body.className += ' js-loaded';
   </script>
@@ -39,41 +29,7 @@
   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.hotkeys.js"></script>
   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/fitvids.js"></script>
   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/magnific-popup.min.js"></script>
-  <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.cookie.js"></script>
-  <script type="text/javascript">
-  /* <![CDATA[ */
-  var mejsL10n = {
-    "language": "en-GB",
-    "strings": {
-      "Close": "Close",
-      "Fullscreen": "Fullscreen",
-      "Turn off Fullscreen": "Turn off Fullscreen",
-      "Go Fullscreen": "Go Fullscreen",
-      "Download File": "Download File",
-      "Download Video": "Download Video",
-      "Play": "Play",
-      "Pause": "Pause",
-      "Captions\/Subtitles": "Captions\/Subtitles",
-      "None": "None",
-      "Time Slider": "Time Slider",
-      "Skip back %1 seconds": "Skip back %1 seconds",
-      "Video Player": "Video Player",
-      "Audio Player": "Audio Player",
-      "Volume Slider": "Volume Slider",
-      "Mute Toggle": "Mute Toggle",
-      "Unmute": "Unmute",
-      "Mute": "Mute",
-      "Use Up\/Down Arrow keys to increase or decrease volume.": "Use Up\/Down Arrow keys to increase or decrease volume.",
-      "Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.": "Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds."
-    }
-  };
-  var _wpmejsSettings = {
-    "pluginPath": "\/wp-includes\/js\/mediaelement\/"
-  };
-  /* ]]> */
-  </script>
-  <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/mediaelement-and-player.min.js"></script>
-  <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/wp-mediaelement.min.js"></script>
+
 
 </body>
 </html>

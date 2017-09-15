@@ -5,7 +5,6 @@
       <?php if (have_posts()): while (have_posts()) : the_post(); ?>
         <div id="photo" class="image-format">
 
-
           <?php
             $prev = mod_get_adjacent_post('prev', array('post'));
             $next = mod_get_adjacent_post('next', array('post'));

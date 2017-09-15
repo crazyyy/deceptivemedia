@@ -1,10 +1,27 @@
 <?php get_header(); ?>
-  <article>
 
-    <h1 class="search-title inner-title"><?php echo sprintf( __( '%s Search Results for ', 'wpeasy' ), $wp_query->found_posts ); echo get_search_query(); ?></h1>
-    <?php get_template_part('loop'); ?>
-    <?php get_template_part('pagination'); ?>
+  <div id="container">
+    <div class="content">
+      <div class="cat-description">
+        <h1><?php echo sprintf( __( '%s Search Results for ', 'wpeasy' ), $wp_query->found_posts ); echo get_search_query(); ?></h1>
+      </div>
+      <div class="grid-outer">
+        <div id="grid">
+          <?php get_template_part('loop'); ?>
+        </div>
+        <div class="new-items"></div>
+      </div>
+      <div class="clear"></div>
+        <div class="title-nav-bar">
+        <div class="title-nav-bar-inner">
+          <span class="info-wrap">
+            <a href="<?php echo home_url(); ?>"><i class="fa fa-home fa-border" aria-hidden="true"></i></a>
+            <a href="javascript:void(0)" class="info-toggle"><?php if (function_exists('easy_breadcrumbs')) easy_breadcrumbs(); ?></a>
+          </span>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  </article>
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -41,10 +41,12 @@
           <img alt="logo" src="<?php echo get_template_directory_uri(); ?>/img/logo.svg">
         </a>
       </div>
+
       <div class="title-description-wrap">
-        <p class="site-title"><a href="<?php echo home_url(); ?>" rel="home">Deceptive Media</a></p>
-        <p class="site-description">Mainly abstract photoblog</p>
+        <p class="site-title"><a href="<?php echo home_url(); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+        <p class="site-description"><?php bloginfo( 'description' ); ?></p>
       </div>
+
       <div class="open-icons alignright">
         <a href="javascript:void(0)" onclick="toggleFullScreen();" class="open-full-screen" style="display:block">
           <i class="fa fa-arrows-alt fa-border" aria-hidden="true"></i>
@@ -69,24 +71,13 @@
     <nav>
       <div class="navigation">
         <div class="menu-header">
-          <ul id="menu-side-menu" class="">
-            <li id="menu-item-15461" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-15461"><a href="http://www.deceptivemedia.co.uk/">Home</a></li>
-            <li id="menu-item-17176" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-17176"><a href="http://www.deceptivemedia.co.uk/photoblog">Photoblog</a>
-              <ul class="sub-menu">
-                <li id="menu-item-15463" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-15463"><a href="http://www.deceptivemedia.co.uk/category/photoblog">Archives</a></li>
-                <li id="menu-item-23480" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-23480"><a href="http://www.deceptivemedia.co.uk/category/projects/portfolio">Portfolio</a></li>
-              </ul>
-            </li>
-            <li id="menu-item-16600" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16600"><a href="http://www.deceptivemedia.co.uk/category/videos">Videos</a></li>
-            <li id="menu-item-18037" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18037"><a href="http://www.deceptivemedia.co.uk/category/news">News</a></li>
-            <li id="menu-item-17995" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-17995"><a href="http://www.deceptivemedia.co.uk/category/reviews">Reviews</a></li>
-          </ul>
+          <?php wpeHeadNav(); ?>
         </div>
       </div>
     </nav>
 
     <div class="search-form">
-      <form method="get" id="search" class="err" action="http://www.deceptivemedia.co.uk/">
+      <form method="get" id="search" class="err" action="<?php echo home_url(); ?>">
         <input placeholder="Enter search text and hit enter" type="text" value="" name="s" id="s">
       </form>
     </div>
@@ -95,38 +86,7 @@
       <div class="filter-menu" style="display: block">
         <div class="categories-menu-show show_categories" style="display:block">
           <h2 class="filter-heading">Categories</h2>
-          <ul class="hierarchy">
-            <li class="cat-item cat-item-766"><a href="http://www.deceptivemedia.co.uk/category/cameras">Cameras</a> (734)
-              <ul class="children">
-                <li class="cat-item cat-item-713"><a href="http://www.deceptivemedia.co.uk/category/cameras/canon-eos-300d">Canon EOS 300D</a> (96)
-                </li>
-                <li class="cat-item cat-item-714"><a href="http://www.deceptivemedia.co.uk/category/cameras/canon-eos-500d">Canon EOS 500D</a> (21)
-                </li>
-                <li class="cat-item cat-item-715"><a href="http://www.deceptivemedia.co.uk/category/cameras/canon-eos-5d">Canon EOS 5D</a> (313)
-                </li>
-                <li class="cat-item cat-item-728"><a href="http://www.deceptivemedia.co.uk/category/cameras/pentax-optio-33lf">Pentax Optio 33LF</a> (1)
-                </li>
-                <li class="cat-item cat-item-730"><a href="http://www.deceptivemedia.co.uk/category/cameras/sony-cybershot">Sony Cybershot</a> (2)
-                </li>
-              </ul>
-            </li>
-            <li class="cat-item cat-item-765"><a href="http://www.deceptivemedia.co.uk/category/lenses">Lenses</a> (704)
-              <ul class="children">
-                <li class="cat-item cat-item-732"><a href="http://www.deceptivemedia.co.uk/category/lenses/canon-ef-100-400mm-f4-5-5-6l-is">Canon EF 100-400mm f/4.5-5.6L IS</a> (92)
-                </li>
-                <li class="cat-item cat-item-733"><a href="http://www.deceptivemedia.co.uk/category/lenses/canon-ef-17-40mm-f4l">Canon EF 17-40mm f/4L</a> (99)
-                </li>
-                <li class="cat-item cat-item-775"><a href="http://www.deceptivemedia.co.uk/category/lenses/canon-ef-24-105-f4l-is">Canon EF 24-105 f/4L IS</a> (1)
-                </li>
-                <li class="cat-item cat-item-748"><a href="http://www.deceptivemedia.co.uk/category/lenses/tamron-90mm-f2-8-macro">Tamron 90mm f/2.8 macro</a> (164)
-                </li>
-              </ul>
-            </li>
-            <li class="cat-item cat-item-155"><a href="http://www.deceptivemedia.co.uk/category/news">News</a> (8)
-            </li>
-            <li class="cat-item cat-item-149"><a href="http://www.deceptivemedia.co.uk/category/photoblog">Photoblog</a> (735)
-            </li>
-          </ul>
+          <?php wpeFootNav(); ?>
         </div>
         <div class="clear"></div>
       </div>
@@ -137,24 +97,29 @@
       <div class="widget">
         <h3>Elsewhere</h3>
         <ul class="xoxo blogroll">
-          <li><a href="http://www.arcangel.com/C.aspx?VP3=SearchResult&amp;VBID=2U1HZO9RCHXD" target="_blank">Arcangel</a></li>
-          <li><a href="http://www.c-dek.co.uk/" title="Ambient electronica" target="_blank">C-Dek</a></li>
-          <li><a href="http://www.gettyimages.co.uk/search/2/image?artist=deceptive%20media&amp;excludenudity=false&amp;page=1&amp;sort=newest" title="Sock photography at Getty Images" target="_blank">Getty Images</a></li>
-          <li><a href="http://www.greatbigcanvas.com/category/bell-andy/" target="_blank">Great Big Canvas</a></li>
-          <li><a href="http://www.lcuk.photo/author/deceptive/" title="A member of Landscape Collective UK" target="_blank">LCUK</a></li>
-          <li><a href="http://photoblogs.org/blogs/deceptivemedia.co.uk" target="_blank">Photoblogs.org</a></li>
-          <li><a href="http://trigger.photoshelter.com/search?I_DSC=Andy+Bell&amp;I_DSC_AND=t&amp;_ACT=search" title="Trigger Image" target="_blank">Trigger Image</a></li>
+          <li><a href="#" target="_blank">Arcangel</a></li>
+          <li><a href="#" title="Ambient electronica" target="_blank">C-Dek</a></li>
+          <li><a href="#" title="Sock photography at Getty Images" target="_blank">Getty Images</a></li>
+          <li><a href="#" target="_blank">Great Big Canvas</a></li>
+          <li><a href="#" title="A member of Landscape Collective UK" target="_blank">LCUK</a></li>
+          <li><a href="#" target="_blank">Photoblogs.org</a></li>
+          <li><a href="#" title="Trigger Image" target="_blank">Trigger Image</a></li>
         </ul>
         <div class="clear"></div>
       </div>
       <div class="divide"></div>
-      <div class="widget"><a class="ambient-light-button-social" href="https://www.flickr.com/photos/deceptivemedia/"><i class="fa fa-flickr"></i></a><a class="ambient-light-button-social" href="https://www.facebook.com/DeceptiveMedia/"><i class="fa fa-facebook"></i></a><a class="ambient-light-button-social" href="https://500px.com/deceptivemedia"><i class="fa fa-500px"></i></a><a class="ambient-light-button-social" href="https://twitter.com/Deceptive_Media"><i class="fa fa-twitter"></i></a><a class="ambient-light-button-social" href="http://deceptivemedia.tumblr.com/"><i class="fa fa-tumblr"></i></a>
+      <div class="widget">
+        <a class="ambient-light-button-social" href="https://www.flickr.com/photos/deceptivemedia/"><i class="fa fa-flickr"></i></a>
+        <a class="ambient-light-button-social" href="https://www.facebook.com/DeceptiveMedia/"><i class="fa fa-facebook"></i></a>
+        <a class="ambient-light-button-social" href="https://500px.com/deceptivemedia"><i class="fa fa-500px"></i></a>
+        <a class="ambient-light-button-social" href="https://twitter.com/Deceptive_Media"><i class="fa fa-twitter"></i></a>
+        <a class="ambient-light-button-social" href="http://deceptivemedia.tumblr.com/"><i class="fa fa-tumblr"></i></a>
         <div class="clear"></div>
       </div>
       <footer>
         <div class="divide"></div>
         <div class="copyright">
-          ©2004-2017 Deceptive Media </div>
+          ©2004-<?php echo date("Y"); ?> <?php bloginfo('name'); ?> </div>
       </footer>
     </div>
 
