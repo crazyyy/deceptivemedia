@@ -3,10 +3,18 @@
   <div id="container">
     <div class="content">
       <?php if (have_posts()): while (have_posts()) : the_post(); ?>
+
+        <?php if (get_field('photo_vs_video')) { ?>
         <div id="photo" class="image-format">
 
-          <div class="photo-link-overlay photo-link-zoom">
-            <a onclick="event.preventDefault();" href="javascript:void(0)"></a>
+          <?php
+            $prev = mod_get_adjacent_post('prev', array('post'));
+            $next = mod_get_adjacent_post('next', array('post'));
+          ?>
+          <div class="photo-links">
+            <div class="photo-link-overlay photo-link-zoom">
+              <a onclick="event.preventDefault();" href="javascript:void(0)"></a>
+            </div>
           </div>
 
           <?php if ( has_post_thumbnail()) { ?>
@@ -14,8 +22,17 @@
           <?php } else { ?>
             <img class="responsive-full wp-post-image" src="<?php echo catchFirstImage(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />
           <?php } ?>
-
         </div>
+        <?php } else { ?>
+
+          <div class="video-wrap">
+            <div id="video">
+              <?php the_field('video'); ?>
+            </div>
+          </div>
+
+        <?php } ?>
+
         <div class="info ">
           <div class="average-color-line" style="background: url('<?php echo get_template_directory_uri(); ?>/img/20130223_164032-15-1x1.jpg')"></div>
           <a class="photo-info-zoom" href="javascript:void(0)">

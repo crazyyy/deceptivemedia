@@ -3,6 +3,8 @@
   <div id="container">
     <div class="content">
       <?php if (have_posts()): while (have_posts()) : the_post(); ?>
+        <?php if (get_field('photo_vs_video')) { ?>
+
         <div id="photo" class="image-format">
 
           <?php
@@ -32,6 +34,17 @@
           <?php } ?>
 
         </div>
+        <?php } else { ?>
+
+          <div class="video-wrap">
+            <div id="video">
+              <?php the_field('video'); ?>
+            </div>
+          </div>
+
+        <?php } ?>
+
+
         <div class="info ">
           <div class="average-color-line" style="background: url('<?php echo get_template_directory_uri(); ?>/img/20130223_164032-15-1x1.jpg')"></div>
 
