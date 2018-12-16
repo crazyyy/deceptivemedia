@@ -1,1 +1,0 @@
-D:/Works/Verstka/deceptivemedia/wordpress/wp-content/plugins/query-monitor/wp-content/db.php
